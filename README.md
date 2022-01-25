@@ -1,6 +1,6 @@
 # Team AuraForce!
 
-Revature Salesforce squad of JAN18-2022 cohort
+Revature Salesforce squad, JAN18-2022 cohort
 
 ## Kanban
 
