@@ -5,6 +5,7 @@ Revature Salesforce squad, JAN18-2022 cohort
 ## Kanban
 
 - [Team Kanban board](https://github.com/Revature-Salesforce-Training/Amplifire/projects/3)
+- [Project-1 Kanban board](https://github.com/Revature-Salesforce-Training/Amplifire/projects/4)
 
 ## Wiki
 
