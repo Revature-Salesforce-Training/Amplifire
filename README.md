@@ -16,3 +16,4 @@ Revature Salesforce squad, JAN18-2022 cohort
 ## Project 1
 - [Project 1 Requirements](https://github.com/Revature-Salesforce-Training/Amplifire/wiki/Project-1-Requirements)
 - [User Stories](https://github.com/Revature-Salesforce-Training/Amplifire/wiki/Project-1-User-Stories)
+- [Project 1 ERD](https://github.com/Revature-Salesforce-Training/Amplifire/wiki/Project-1-ERD)
