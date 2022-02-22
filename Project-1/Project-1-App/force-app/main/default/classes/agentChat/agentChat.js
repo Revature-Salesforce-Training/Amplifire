@@ -7,7 +7,7 @@ const CHASITOR_USER_TYPE = 'chasitor';
 const SUPPORTED_USER_TYPES = [AGENT_USER_TYPE, CHASITOR_USER_TYPE];
 
 /**
- Displays a chat message using the inherited api messageContent and is styled based on the inherited api userType and messageContent api objects passed in from BaseChatMessage.
+ * Displays a chat message using the inherited api messageContent and is styled based on the inherited api userType and messageContent api objects passed in from BaseChatMessage.
  */
 export default class ChatMessageDefaultUI extends BaseChatMessage {
     @track messageStyle = '';
