@@ -4,21 +4,23 @@
       onnavigate={handleNavigation}
     ></c-header>
 
-    <!-- Components go here! -->
-    <template if:true={isShowingHomeView}>
-      <!-- Home/Info Dashboard -->
-      
-    </template>
-    <template if:true={isShowingListingView}>
-      <!-- Listings Management -->
+    <div class="body-container">
+      <!-- Components go here! -->
+      <template if:true={isShowingHomeView}>
+        <!-- Home/Info Dashboard -->
+        
+      </template>
+      <template if:true={isShowingListingView}>
+        <!-- Listings Management -->
 
-    </template>
-    <template if:true={isShowingChatView}>
-      <!-- Agent Chat -->
+      </template>
+      <template if:true={isShowingChatView}>
+        <!-- Agent Chat -->
 
-    </template>
-    <template if:true={isShowingFaqView}>
-      <!-- Frequently Asked Questions -->
+      </template>
+      <template if:true={isShowingFaqView}>
+        <!-- Frequently Asked Questions -->
 
-    </template>
+      </template>
+    </div>
 </template>

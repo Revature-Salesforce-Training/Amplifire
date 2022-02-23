@@ -42,4 +42,4 @@ export default class App extends LightningElement {
                 this.isShowingHome = true;
         }
     }
-} 
+}
