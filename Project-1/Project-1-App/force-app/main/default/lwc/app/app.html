@@ -1,0 +1,24 @@
+<template>
+  <!-- Header component w/ page switching via event handler -->
+    <c-header
+      onnavigate={handleNavigation}
+    ></c-header>
+
+    <!-- Components go here! -->
+    <template if:true={isShowingHomeView}>
+      <!-- Home/Info Dashboard -->
+      
+    </template>
+    <template if:true={isShowingListingView}>
+      <!-- Listings Management -->
+
+    </template>
+    <template if:true={isShowingChatView}>
+      <!-- Agent Chat -->
+
+    </template>
+    <template if:true={isShowingFaqView}>
+      <!-- Frequently Asked Questions -->
+
+    </template>
+</template>
