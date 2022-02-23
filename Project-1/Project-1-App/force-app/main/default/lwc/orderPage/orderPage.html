@@ -1,0 +1,27 @@
+<!-- /*
+*	Author:- Gabriel Anton
+*	Description:- 
+*	Created:- 2/22/22
+*/ -->
+
+<template>
+
+    <lightning-card>
+
+        <template if:true={order.data}>
+            <template for:each={order.data} for:item="order">
+
+        
+            <lightning-record-form 
+            key={order.Id}
+            object-api-name={orderApi}
+            record-id={order.Id}
+            fields={fields}>
+            </lightning-record-form>
+
+            </template>
+        </template>
+
+    </lightning-card>
+    
+</template>
