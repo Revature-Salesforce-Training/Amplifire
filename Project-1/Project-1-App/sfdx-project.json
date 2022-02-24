@@ -8,5 +8,5 @@
   "name": "Project-1-App",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "53.0"
+  "sourceApiVersion": "52.0"
 }
