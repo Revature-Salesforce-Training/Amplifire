@@ -15,7 +15,7 @@ public with sharing class ProductsController {
     // Dynamically search for book record by Name field
     @AuraEnabled
     public static List<Product2> queryByName(String name) {
-        if (name.isEmpty()) {
+        if (name == '') {
             return getProducts();
         }
 
