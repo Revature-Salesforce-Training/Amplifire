@@ -9,8 +9,10 @@ Status, ShippingAddress, Pricebook2Id, Delivery__c
 import { LightningElement, wire } from 'lwc';
 
 import retrieveOrders from '@salesforce/apex/OrderController.retrieveOrders';
+import retrieveDeliveries from '@salesforce/apex/OrderController.retrieveDeliveries';
 import retrieveOrdersWithTitle from '@salesforce/apex/OrderController.retrieveOrdersWithTitle';
 import retrievePendingOrders from '@salesforce/apex/OrderController.retrievePendingOrders';
+import retrieveCompletedOrders from '@salesforce/apex/OrderController.retrieveCompletedOrders';
 
 import ORDER_OBJECT from '@salesforce/schema/Order';
 import STATUS_FIELD from '@salesforce/schema/Order.Status';
@@ -35,7 +37,6 @@ export default class OrderPage extends LightningElement {
     orderitemApi = ORDERITEM_OBJECT;
     order_fields = [STATUS_FIELD, SHIPPINGADDRESS_FIELD, PRICEBOOK2ID_FIELD, DELIVERY_FIELD];
     order_item_fields = [ORDERID_FIELD, ORDER_STATUS_FIELD, ORDER_SHIPPINGADDRESS_FIELD, ORDER_PRICEBOOK2ID_FIELD, ORDER_DELIVERY_FIELD]
-
     
     handleInput(e){
         this.searchTitle= e.target.value;
@@ -50,6 +51,7 @@ export default class OrderPage extends LightningElement {
     handleAll(){
         this.pendingIsSelected = false;
         console.log("Titles with orders: ", this.orders_with_title);
+        console.log(this.order_item_fields);
     }
 
     clearSearch(){
@@ -70,6 +72,12 @@ export default class OrderPage extends LightningElement {
 
     @wire(retrieveOrdersWithTitle, {title: '$searchTitle'})
     orders_with_title;
+
+    @wire(retrieveCompletedOrders)
+    completed_orders;
+
+    @wire(retrieveDeliveries)
+    deliveries;
 
 
 }
