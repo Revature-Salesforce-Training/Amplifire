@@ -4,16 +4,19 @@
     <c-header
       onnavigate={handleNavigation}
     ></c-header>
-
     <div class="body-container">
       <!-- Components go here! -->
       <template if:true={isShowingHomeView}>
         <!-- Home/Info Dashboard -->
-        
       </template>
-      <template if:true={isShowingListingView}>
+      <template if:true={isShowingListingsView}>
         <!-- Listings Management -->
         <c-listing-component></c-listing-component>
+      </template>
+      <template if:true={isShowingOrdersView}>
+        <!-- Orders -->
+        <c-order-page></c-order-page>
+        
       </template>
       <template if:true={isShowingChatView}>
         <!-- Agent Chat -->
@@ -22,11 +25,6 @@
       <template if:true={isShowingFaqView}>
         <!-- Frequently Asked Questions -->
 
-      </template>
-      <template if:true={isShowingOrderView}>
-        <!-- Orders -->
-        <c-order-page></c-order-page>
-        
       </template>
     </div>
   </div>

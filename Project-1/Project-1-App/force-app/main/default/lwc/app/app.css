@@ -1,10 +1,17 @@
 .app-container {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
 }
 
 .body-container {
     background-color: #9e9e9e;
     padding: 2rem;
+    height: 100%;
+    bottom: auto;
 }
