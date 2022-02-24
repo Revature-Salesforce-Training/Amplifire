@@ -9,6 +9,7 @@ export default class App extends LightningElement {
         this.isShowingListingView = false;
         this.isShowingChatView = false;
         this.isShowingFaqView = false;
+        this.isShowingOrderView = false;
     }
 
     // Navigation handler for header page switching
@@ -24,6 +25,7 @@ export default class App extends LightningElement {
         this.isShowingListingView = false;
         this.isShowingChatView = false;
         this.isShowingFaqView = false;
+        this.isShowingOrderView = false;
 
         switch (viewString) {
             case 'home':
@@ -37,6 +39,9 @@ export default class App extends LightningElement {
                 break;
             case 'faq':
                 this.isShowingFaqView = false;
+                break;
+            case 'orders':
+                this.isShowingOrderView = true;
                 break;
             default:
                 this.isShowingHome = true;
