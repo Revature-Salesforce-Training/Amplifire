@@ -1,0 +1,85 @@
+<!-- /*
+*	Author:- Gabriel Anton
+*	Description:- 
+*	Created:- 2/22/22
+*/ -->
+
+<template>
+
+<div class="container">
+    <!-- <h1>Order Page</h1> -->
+    <br>
+
+    <lightning-card>
+        <br>
+        <button onclick={handleAll}>All Orders</button>
+        <br>
+        <button onclick={handlePending}>Pending Orders</button>
+        <br>
+
+        <template if:false={pendingIsSelected}>
+        <template if:true={orders.data}>
+            <template for:each={orders.data} for:item="order">
+        
+            <lightning-record-form 
+            key={order.Id}
+            object-api-name={orderApi}
+            record-id={order.Id}
+            fields={order_fields}>
+            </lightning-record-form>
+
+            </template>
+        </template>
+        </template>
+
+
+        <template if:true={pendingIsSelected}>
+        <template if:true={pending_orders.data}>
+            <template for:each={pending_orders.data} for:item="pending_order">
+
+            <lightning-record-form 
+            key={pending_order.Id}
+            object-api-name={orderApi}
+            record-id={pending_order.Id}
+            fields={order_fields}>
+            </lightning-record-form>
+
+            </template>
+        </template>
+        </template>
+
+    </lightning-card>
+
+    <br>
+
+    <lightning-card>
+
+        <h1>Check Out How Each Of Your Books Are Doing</h1>
+        <br>
+        <input type="text" placeholder="Enter Title To Search Number Of Orders" onchange={handleInput}></input>
+        <br>
+        <button onclick={clearSearch}>Clear Search</button>
+        <br>
+
+    <template if:true={titleIsSearched}>
+        <template if:true={orders_with_title.data}>
+            <template for:each={orders_with_title.data} for:item="order_by_title">
+
+        
+            <lightning-record-form
+            key={order_by_title.Id}
+            object-api-name={orderitemApi}
+            record-id={order_by_title.Id}
+            fields={order_fields}>
+            </lightning-record-form>
+
+            </template>
+        </template>
+    </template>
+
+    </lightning-card>
+    
+
+    </div>
+    
+</template>

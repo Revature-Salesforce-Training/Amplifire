@@ -1,0 +1,12 @@
+.container {
+    margin: 0;
+    padding: 30px;
+}
+
+lightning-card{
+    padding: 20px;
+}
+
+lightning-record-form{
+    padding: 20px;
+}
