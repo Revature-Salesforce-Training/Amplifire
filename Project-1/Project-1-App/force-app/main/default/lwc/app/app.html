@@ -23,6 +23,11 @@
         <!-- Frequently Asked Questions -->
 
       </template>
+      <template if:true={isShowingOrderView}>
+        <!-- Orders -->
+        <c-order-page></c-order-page>
+        
+      </template>
     </div>
   </div>
 </template>

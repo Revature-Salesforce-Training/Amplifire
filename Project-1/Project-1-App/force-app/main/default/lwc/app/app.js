@@ -2,10 +2,18 @@ import { LightningElement } from 'lwc';
 
 export default class App extends LightningElement {
 
-    isShowingHomeView = true;
-    isShowingListingView = false;
-    isShowingChatView = false;
-    isShowingFaqView = false;
+<<<<<<< HEAD
+=======
+    constructor() {
+        super();
+
+        this.isShowingHomeView = true;
+        this.isShowingListingView = false;
+        this.isShowingChatView = false;
+        this.isShowingFaqView = false;
+        this.isShowingOrderView = false;
+    }
+>>>>>>> main
 
     // Navigation handler for header page switching
     handleNavigation(event) {
@@ -21,6 +29,7 @@ export default class App extends LightningElement {
         this.isShowingListingView = false;
         this.isShowingChatView = false;
         this.isShowingFaqView = false;
+        this.isShowingOrderView = false;
 
         switch (viewString) {
             case 'home':
@@ -34,6 +43,9 @@ export default class App extends LightningElement {
                 break;
             case 'f.a.q.':
                 this.isShowingFaqView = true;
+                break;
+            case 'orders':
+                this.isShowingOrderView = true;
                 break;
             default:
                 this.isShowingHome = true;
