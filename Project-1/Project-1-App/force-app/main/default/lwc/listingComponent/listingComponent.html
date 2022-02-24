@@ -2,23 +2,59 @@
     <lightning-card class="container">
         <h1 slot="title">Listings Manager</h1>
         <div slot="actions">
-            <input type="text" onchange={handleOnChange}></input>
-            <lightning-button
-                onclick={handleSearchAction}
-                label="Search"
-            ></lightning-button>
             <lightning-button 
+                class="action-button"
                 onclick={handleNewRecordAction}
-                label="New Book"
+                label={buttonLabel}
             ></lightning-button>
         </div>
         <div class="card-body">
-            <template if:true={listings.data}>
-                <ul>
-                    <template for:each={listings.data} for:item="record">
-                        <li key={record.Id}>record.Name</li>
-                    </template>
-                </ul>
+            <!-- Show Edit Form -->
+            <template if:true={isShowingEditForm}>
+                <!-- If there's a recordId, supply it to edit form -->
+                <template if:true={recordId}>
+                    <lightning-record-edit-form
+                        record-id="003XXXXXXXXXXXXXXX"
+                        object-api-name="Contact"
+                    >
+                        <lightning-messages> </lightning-messages>
+                        <lightning-output-field field-name="AccountId">
+                        </lightning-output-field>
+                        <lightning-input-field field-name="FirstName"> </lightning-input-field>
+                        <lightning-input-field field-name="LastName"> </lightning-input-field>
+                        <lightning-input-field field-name="Email"> </lightning-input-field>
+                        <lightning-button
+                            class="slds-m-top_small"
+                            variant="brand"
+                            type="submit"
+                            name="update"
+                            label="Update"
+                        >
+                        </lightning-button>
+                    </lightning-record-edit-form>
+                </template>
+                <!-- Else, We're creating a new book record -->
+                <template if:false={recordId}>
+                    <lightning-record-edit-form object-api-name="Contact">
+                        <lightning-messages> </lightning-messages>
+                        <lightning-input-field field-name="Name"> </lightning-input-field>
+                        <lightning-button
+                            class="save-button"
+                            type="submit"
+                            label="Save"
+                        >
+                        </lightning-button>
+                    </lightning-record-edit-form>
+                </template>
+            </template>
+
+            <!-- Show DataTable -->
+            <template if:false={isShowingEditForm}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={listings.data}
+                    columns={dataColumns}
+                ></lightning-datatable>
             </template>
         </div>
     </lightning-card>

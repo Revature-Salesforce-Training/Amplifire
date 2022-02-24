@@ -2,10 +2,10 @@ public with sharing class ProductsController {
     private static String userId = UserInfo.getUserId();
 
     // Return List of books that the user (bookseller) has created
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Product2> getProducts() { 
         return [
-            SELECT Name,Author__c,Genre__c,Page_Count__c 
+            SELECT Id,Name,Author__c,Genre__c,Page_Count__c,Description__c,Current_Stock__c
             FROM Product2 
             WHERE CreatedById = :userId
             WITH SECURITY_ENFORCED
@@ -13,12 +13,8 @@ public with sharing class ProductsController {
     }
     
     // Dynamically search for book record by Name field
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Product2> queryByName(String name) {
-        if (name == '') {
-            return getProducts();
-        }
-
         // Build the query with queryBuilder()
         String query = queryBuilder(
             'Name,Author__c,Genre__c,Page_Count__c',
@@ -30,7 +26,7 @@ public with sharing class ProductsController {
     }
 
     // Helper method to build query strings for Database.query()
-    // fields: fields desired in returned list
+    // fields fields desired in returned list
     // whereClause: filter parameters (eg, Name='name')
     private static String queryBuilder(String fields, String whereClause) {
         // Sanitize strings before building query string
