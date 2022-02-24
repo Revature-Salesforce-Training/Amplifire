@@ -1,0 +1,25 @@
+<template>
+    <lightning-card class="container">
+        <h1 slot="title">Listings Manager</h1>
+        <div slot="actions">
+            <input type="text" onchange={handleOnChange}></input>
+            <lightning-button
+                onclick={handleSearchAction}
+                label="Search"
+            ></lightning-button>
+            <lightning-button 
+                onclick={handleNewRecordAction}
+                label="New Book"
+            ></lightning-button>
+        </div>
+        <div class="card-body">
+            <template if:true={listings.data}>
+                <ul>
+                    <template for:each={listings.data} for:item="record">
+                        <li key={record.Id}>record.Name</li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>
