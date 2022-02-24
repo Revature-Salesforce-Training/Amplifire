@@ -1,6 +1,6 @@
 <template>
-  <slot>
-    <!-- Header component w/ page switching via event handler -->
+  <div class="app-container">
+      <!-- Header component w/ page switching via event handler -->
     <c-header
       onnavigate={handleNavigation}
     ></c-header>
@@ -13,7 +13,7 @@
       </template>
       <template if:true={isShowingListingView}>
         <!-- Listings Management -->
-
+        <c-listing-component></c-listing-component>
       </template>
       <template if:true={isShowingChatView}>
         <!-- Agent Chat -->
@@ -24,5 +24,5 @@
 
       </template>
     </div>
-  </slot>
+  </div>
 </template>
