@@ -2,8 +2,6 @@ import { LightningElement } from 'lwc';
 
 export default class App extends LightningElement {
 
-<<<<<<< HEAD
-=======
     constructor() {
         super();
 
@@ -13,7 +11,6 @@ export default class App extends LightningElement {
         this.isShowingFaqView = false;
         this.isShowingOrderView = false;
     }
->>>>>>> main
 
     // Navigation handler for header page switching
     handleNavigation(event) {
