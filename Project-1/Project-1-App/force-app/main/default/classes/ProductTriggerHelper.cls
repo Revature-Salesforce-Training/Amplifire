@@ -6,7 +6,7 @@ public with sharing class ProductTriggerHelper {
         switch on triggerEvent {
             when BEFORE_INSERT, BEFORE_UPDATE {
                 // Validation
-                    // .addError()
+                validateFields(newRecords[0], oldRecords);
 
                 // Set SKU
                 setSkuOnSave(newRecords[0]);
@@ -16,13 +16,20 @@ public with sharing class ProductTriggerHelper {
         }
     }
 
+    private static void validateFields(Product2 product, List<Product2> oldRecords) {
+        // Duplication
+        for (Product2 p : oldRecords) {
+            if (p.Name == product.Name) {
+                product.Name.addError('Book Already Exists!');
+            }
+        }
+    }
+
     // If the SKU field is empty, create it before insert
     private static void setSkuOnSave(Product2 product) {
         // Set random string as SKU
         if (String.isBlank(product.StockKeepingUnit)) {
             product.StockKeepingUnit = generateRandomSku();
-
-            // insert product;
         }
     }
 
