@@ -22,7 +22,7 @@ public with sharing class ProductTriggerHelper {
         if (String.isBlank(product.StockKeepingUnit)) {
             product.StockKeepingUnit = generateRandomSku()
 
-            insert product;
+            // insert product;
         }
     }
 
