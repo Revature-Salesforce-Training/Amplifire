@@ -3,20 +3,20 @@
     <div class="slds-size_3-of-4 slds-align_absolute-center">
         <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
             <lightning-carousel>
-                <lightning-carousel-image onclick = {handleEvent1}
-                    src = {book1}
+                <lightning-carousel-image onclick = {handleEvent1}>
+                    <img src={book1Img}/>
                     header = "Current Events"
                     description = "See what's happening in your area!"
                     alternative-text = "FAQ's">
                 </lightning-carousel-image>
-                <lightning-carousel-image
-                    src = {book2}
+                <lightning-carousel-image>
+                    <img src ={book2Img}/>
                     header = "FAQ's"
                     description = "Check out our FAQ's for more info!"
                     alternative-text = "FAQ's">
                 </lightning-carousel-image>
-                <lightning-carousel-image
-                    src = {book3}
+                <lightning-carousel-image>
+                    <img src={book3Img}/>
                     header = "Book Club"
                     description = "Join our book club to stay up to date!"
                     alternative-text = "Third card accessible description.">

@@ -5,9 +5,9 @@ import book3 from '@salesforce/resourceUrl/book3';
 
 
 export default class Carousel extends LightningElement {
-    book1 = book1;
-    book2 = book2;
-    book3 = book3;
+    book1Img = book1;
+    book2Img = book2;
+    book3Img = book3;
 
 
 
