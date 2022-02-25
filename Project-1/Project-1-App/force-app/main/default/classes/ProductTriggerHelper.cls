@@ -6,7 +6,7 @@ public with sharing class ProductTriggerHelper {
         switch on triggerEvent {
             when BEFORE_INSERT, BEFORE_UPDATE {
                 // Validation
-
+                    // .addError()
 
                 // Set SKU
                 setSkuOnSave(newRecords[0]);
@@ -20,9 +20,9 @@ public with sharing class ProductTriggerHelper {
     private static void setSkuOnSave(Product2 product) {
         // Set random string as SKU
         if (String.isBlank(product.StockKeepingUnit)) {
-            product.StockKeepingUnit = generateRandomSku()
+            product.StockKeepingUnit = generateRandomSku();
 
-            insert product;
+            // insert product;
         }
     }
 

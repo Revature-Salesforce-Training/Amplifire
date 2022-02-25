@@ -10,12 +10,12 @@ import getProducts from "@salesforce/apex/ProductsController.getProducts";
 
 // Columns defined for the Datatable
 const DATA_COLUMNS = [
-    { label: 'Title', fieldName: 'Name', sortable: true },
-    { label: 'Author', fieldName: 'Author__c' },
-    { label: 'Genre', fieldName: 'Genre__c' },
-    { label: 'Page Count', fieldName: 'Page_Count__c', type: 'number' },
-    { label: 'Description', fieldName: 'Description__c' },
-    { label: 'Stock', fieldName: 'Current_Stock__c', type: 'number' }
+    { label: 'Title', fieldName: 'Name', sortable: true, initialWidth: 300 },
+    { label: 'Author', fieldName: 'Author__c', initialWidth: 200 },
+    { label: 'Genre', fieldName: 'Genre__c', initialWidth: 125 },
+    { label: 'Page Count', fieldName: 'Page_Count__c', type: 'number', initialWidth: 100 },
+    { label: 'Stock', fieldName: 'Current_Stock__c', type: 'number', initialWidth: 100 },
+    { label: 'Description', fieldName: 'Description__c' }
 ];
 
 export default class ListingComponent extends LightningElement {
@@ -24,7 +24,9 @@ export default class ListingComponent extends LightningElement {
     bookRecordTypeId = '0128c000002ATA9AAO';    // Book record type of Product2 object
     dataColumns = DATA_COLUMNS;                 // Column labels for lightning-datatable
     recordId;                                   // To hold recordId of selected record
-    isShowingEditForm = false;                  // Datatable -or- edit form
+    isShowingDataTable = true;                  // Datatable -or-
+    isShowingEditForm = false;                  // Edit form -or-
+    isShowingCaseForm = false;                  // Web-to-Case form
 
     @wire(getProducts)
     listings;
@@ -32,7 +34,7 @@ export default class ListingComponent extends LightningElement {
     // Button label conditional rendering
     get buttonLabel() {
         
-        if (this.isShowingEditForm) {
+        if (this.isShowingEditForm || this.isShowingCaseForm) {
             return 'Cancel';
         } else if (this.recordId) {
             return 'Edit'
@@ -41,11 +43,25 @@ export default class ListingComponent extends LightningElement {
         return 'Add';
     }
 
+    handleCreateDispute() {
+        this.isShowingDataTable = false;
+        this.isShowingEditForm = false;
+        this.isShowingCaseForm = true;
+    }
+
     // Handler for card action button (top right of component)
     handleNewRecordAction() {
-        // Switch between Datatable and Create/Edit form
-        this.isShowingEditForm = this.isShowingEditForm ? false : true;
-        console.log(this.isShowingEditForm);
+        if (this.isShowingCaseForm) {
+            this.isShowingDataTable = true;
+            this.isShowingEditForm = false;
+            this.isShowingCaseForm = false;
+        } else {
+            if (this.isShowingEditForm) {
+                this.isShowingEditForm = false
+            } 
+
+            this.isShowingEditForm = true;
+        }
     }
 
     // Handler for successful record creation in record-edit-form
@@ -57,6 +73,6 @@ export default class ListingComponent extends LightningElement {
 
     // Called when record row is selected
     setSelectedRecordId(event) {
-        this.recordId = event.detail.selectedRows[0];
+        this.recordId = event.detail.selectedRows[0].Id;
     }
 }
