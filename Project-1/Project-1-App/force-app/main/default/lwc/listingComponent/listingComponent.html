@@ -6,6 +6,11 @@
         <div slot="actions">
             <lightning-button 
                 class="action-button"
+                onclick={handleCreateDispute}
+                label="Create Dispute"
+            ></lightning-button>
+            <lightning-button 
+                class="action-button"
                 onclick={handleNewRecordAction}
                 label={buttonLabel}
             ></lightning-button>
@@ -61,13 +66,48 @@
             </template>
 
             <!-- Show DataTable -->
-            <template if:false={isShowingEditForm}>
+            <template if:true={isShowingDataTable}>
                 <lightning-datatable
                     key-field="Id"
                     data={listings.data}
                     columns={dataColumns}
                     onrowselection={setSelectedRecordId}
                 ></lightning-datatable>
+            </template>
+
+            <!-- Dispute form/Web-to-Case -->
+            <template if:true={isShowingCaseForm}>
+                <!-- (Mostly) generated from org -->
+                <form class="case-form" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+                    <input type=hidden name="orgid" value="00D8c000004shgG">
+                    <input type=hidden name="retURL" value="http://auraforceproject1-developer-edition.na213.force.com/bookseller">
+                
+                    <label  for="name">Contact Name<input  id="name" maxlength="80" name="name" size="20" type="text" /></label>
+                
+                    <label  for="email">Email<input  id="email" maxlength="80" name="email" size="20" type="text" /></label>
+            
+                    <label  for="phone">Phone<input  id="phone" maxlength="40" name="phone" size="20" type="text" /></label>
+            
+                    <label  for="subject">Subject<input  id="subject" maxlength="80" name="subject" size="20" type="text" /></label>
+                
+                    <label  for="description">Description<textarea  name="description"></textarea></label>
+                
+                    <label  for="product">Product
+                    <select  id="00N8c00000O6wF7" name="00N8c00000O6wF7" title="Product">
+                        <option value="">--None--</option>
+
+                        <!-- Books to dispute -->
+                        <template for:each={listings.data} for:item="listing">
+                            <option key={listing.Id} value={listing.Name}>{listing.Name}</option>
+                        </template>
+                    </select></label>
+                
+                    <input type="hidden"  id="external" name="external" value="1" />
+                
+                    <input class="slds-button" type="submit" name="submit">
+                
+                </form>
             </template>
         </div>
     </lightning-card>

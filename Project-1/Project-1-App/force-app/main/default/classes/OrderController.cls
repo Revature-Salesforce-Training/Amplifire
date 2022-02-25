@@ -40,7 +40,7 @@ public with sharing class OrderController {
     @AuraEnabled(cacheable=true)
     public static List<OrderItem> retrieveOrdersWithTitle(String title) {
        return 
-       [SELECT Order.Status, Order.ShippingAddress, Order.Pricebook2Id, Order.Delivery__c 
+       [SELECT Quantity, Order.Status, Order.ShippingAddress, Order.Pricebook2Id, Order.Delivery__c 
         FROM OrderItem 
         WHERE Product2.Name=:title];
         
