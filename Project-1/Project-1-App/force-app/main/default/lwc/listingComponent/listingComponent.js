@@ -51,16 +51,14 @@ export default class ListingComponent extends LightningElement {
 
     // Handler for card action button (top right of component)
     handleNewRecordAction() {
-        if (this.isShowingCaseForm) {
+        if (this.isShowingCaseForm || this.isShowingEditForm) {
             this.isShowingDataTable = true;
             this.isShowingEditForm = false;
             this.isShowingCaseForm = false;
-        } else {
-            if (this.isShowingEditForm) {
-                this.isShowingEditForm = false
-            } 
-
+        } else if (this.isShowingDataTable) {
+            this.isShowingDataTable = false;
             this.isShowingEditForm = true;
+            this.isShowingCaseForm = false;
         }
     }
 

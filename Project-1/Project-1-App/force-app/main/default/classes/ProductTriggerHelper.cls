@@ -17,10 +17,10 @@ public with sharing class ProductTriggerHelper {
     }
 
     private static void validateFields(Product2 product, List<Product2> oldRecords) {
-        // Duplication
+        // Disallow duplication of Title/Name
         for (Product2 p : oldRecords) {
             if (p.Name == product.Name) {
-                product.Name.addError('Book Already Exists!');
+                product.Name.addError('Book already exists!');
             }
         }
     }
@@ -30,6 +30,8 @@ public with sharing class ProductTriggerHelper {
         // Set random string as SKU
         if (String.isBlank(product.StockKeepingUnit)) {
             product.StockKeepingUnit = generateRandomSku();
+
+            upsert product;
         }
     }
 

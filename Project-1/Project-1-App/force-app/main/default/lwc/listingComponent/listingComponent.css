@@ -16,4 +16,25 @@
 .action-button {
     background-color: #357a99;
     color: #000000;
+    margin-left: 0.5rem;
+}
+
+.case-form {
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+input {
+    flex: 0 0 200px;
+    min-width: 75%;
+    margin-left: 1rem;
 }
