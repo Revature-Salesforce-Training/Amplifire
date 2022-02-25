@@ -1,3 +1,9 @@
+/**
+    Created by Sean Whitley
+    Team AuraForce
+    Revature, 20220118 Cohort
+ */
+
 public with sharing class ProductsController {
     private static String userId = UserInfo.getUserId();
 
