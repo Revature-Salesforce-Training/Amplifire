@@ -20,7 +20,7 @@ public with sharing class ProductTriggerHelper {
     private static void setSkuOnSave(Product2 product) {
         // Set random string as SKU
         if (String.isBlank(product.StockKeepingUnit)) {
-            product.StockKeepingUnit = generateRandomSku()
+            product.StockKeepingUnit = generateRandomSku();
 
             // insert product;
         }
