@@ -7,7 +7,7 @@
 <template>
 
 <div class="container">
-    <h1 slot="title" style="font-size: 3em;">Order Manager</h1>
+    <h1 slot="title">Order Manager</h1>
     <br>
     <div style="background-color: white;">
     <div class="padding">
@@ -136,8 +136,8 @@
         <br>
         <input type="text" placeholder="Enter Title To Search Number Of Orders" onchange={handleInput}></input>
         <br>
-        <button onclick={clearSearch}>Clear Search</button>
-        <br>
+        <!-- <button onclick={clearSearch}>Clear Search</button> -->
+        <!-- <br> -->
 
         <template if:true={titleIsSearched}>
 
@@ -147,9 +147,8 @@
                     <ul>
                         <template for:each={orders_with_title.data} for:item="order_by_title">
                             <li key={order_by_title.Id}><hr></li>
-                            <li key={order_by_title.Id}>Order Number: {order_by_title.Order.OrderNumber}</li>
-                            <li key={order_by_title.Id}>Order Status: {order_by_title.Status}</li>
-                            <li key={order_by_title.Id}>Order Address: {order_by_title.Order.ShippingAddress}</li>
+                            <li key={order_by_title.Id}>Order Quantity: {order_by_title.Quantity}</li>
+                            <li key={order_by_title.Id}>Order Status: {order_by_title.Order.Status}</li>
                             <li key={order_by_title.Id}>Order Pricebook2Id: {order_by_title.Order.Pricebook2Id}</li>
                             <li key={order_by_title.Id}><hr></li>
                             

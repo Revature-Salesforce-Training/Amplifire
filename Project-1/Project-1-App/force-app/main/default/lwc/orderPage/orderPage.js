@@ -25,9 +25,9 @@ const delivery_fields = [
     ];
 
 const order_item_fields = [
-    { label: 'Name', fieldName: 'Name' },
     { label: 'Number', fieldName: 'Order.OrderNumber'},
     { label: 'ShippingAddress', fieldName: 'Order.ShippingAddress'},
+    { label: 'Quantity', fieldName: 'Quantity' },
     { label: 'Pricebook', fieldName: 'Order.Pricebook2Id' },
 ];
 

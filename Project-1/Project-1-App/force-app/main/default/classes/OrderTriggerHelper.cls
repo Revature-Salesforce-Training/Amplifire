@@ -1,3 +1,10 @@
+/*
+*	Author:- Gabriel Anton
+*	Description:- Apex Class to sort orders by status, delivery, price, and retrieve
+*   the orders for a particular product as well filtering by status
+*	Created:- 2/25/22
+*/
+
 public with sharing class OrderTriggerHelper {
     public static void addOrderToDelivery(List<Order> orderList) {
         List<Delivery__c> newDeliv = new List<Delivery__c>();
