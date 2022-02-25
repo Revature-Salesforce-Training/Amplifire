@@ -1,0 +1,99 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="slds-size_3-of-4 slds-align_absolute-center">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+            <lightning-carousel>
+                <lightning-carousel-image onclick = {handleEvent1}
+                    src = {book1}
+                    header = "Current Events"
+                    description = "See what's happening in your area!"
+                    alternative-text = "FAQ's">
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {book2}
+                    header = "FAQ's"
+                    description = "Check out our FAQ's for more info!"
+                    alternative-text = "FAQ's">
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {book3}
+                    header = "Book Club"
+                    description = "Join our book club to stay up to date!"
+                    alternative-text = "Third card accessible description.">
+                </lightning-carousel-image>
+            </lightning-carousel>
+        </div>
+    </div>
+</template>
+
+
+
+
+
+
+
+
+<!--CAROUSEL-->
+  <!-- <div class="slds-carousel slds-align_absolute-center">
+    <div class="slds-carousel__stage">
+      <div class="slds-carousel__panels" style="transform:translateX(-0%)"> -->
+<!--PANEL 1-->
+        <!-- <div onclick={handleTab} id="content-id-79" class="slds-carousel__panel" role="tabpanel" aria-hidden="false" aria-labelledby="indicator-id-82">
+          <a href="#" class="slds-carousel__panel-action slds-text-link_reset" tabindex="0">
+            <div class="slds-carousel__image">
+              <img class="image1" src= {book1} alt="Visit App Exchange" />
+            </div>
+            <div class="slds-carousel__content">
+              <h2 class="slds-carousel__content-title">Visit App Exchange</h2>
+              <p>Extend Salesforce with the #1 business marketplace.</p>
+            </div>
+          </a>
+        </div> -->
+<!--PANEL 2-->
+        <!-- <div onclick={handleTab} id="content-id-80" class="slds-carousel__panel" role="tabpanel" aria-hidden="true" aria-labelledby="indicator-id-83">
+          <a href="#" class="slds-carousel__panel-action slds-text-link_reset" tabindex="-1">
+            <div class="slds-carousel__image">
+              <img  class="image2" src= {book2} alt="Click to Customize" />
+            </div>
+            <div class="slds-carousel__content">
+              <h2 class="slds-carousel__content-title">Click to Customize</h2>
+              <p>Use the Object Manager to add fields, build layouts, and more.</p>
+            </div>
+          </a>
+        </div> -->
+<!--PANEL 3-->
+        <!-- <div onclick={handleTab} id="content-id-81" class="slds-carousel__panel" role="tabpanel" aria-hidden="true" aria-labelledby="indicator-id-84">
+          <a href="#" class="slds-carousel__panel-action slds-text-link_reset" tabindex="-1">
+            <div class="slds-carousel__image">
+              <img  class="image3" src= {book3} alt="Download SalesforceA" />
+            </div>
+            <div class="slds-carousel__content">
+              <h2 class="slds-carousel__content-title">Download SalesforceA</h2>
+              <p>Get the mobile app that&#x27;s just for Salesforce admins.</p> -->
+            <!-- </div>
+          </a>
+        </div>
+      </div> -->
+<!--Tabs to scroll through carousel-->
+      <!-- <ul class="slds-carousel__indicators" role="tablist"> -->
+<!--TAB 1-->
+        <!-- <li class="slds-carousel__indicator" role="presentation">
+          <a id="indicator-id-82" class="slds-carousel__indicator-action slds-is-active panel1" role="tab" tabindex="0" aria-selected="true" aria-controls="content-id-79" title="Visit App Exchange tab">
+            <span class="slds-assistive-text">Visit App Exchange tab</span>
+          </a>
+        </li> -->
+<!--TAB 2-->
+        <!-- <li class="slds-carousel__indicator" role="presentation">
+          <a id="indicator-id-83" class="slds-carousel__indicator-action panel2" role="tab" tabindex="-1" aria-selected="false" aria-controls="content-id-80" title="Click to Customize tab">
+            <span class="slds-assistive-text">Click to Customize tab</span>
+          </a>
+        </li> -->
+<!--TAB 3-->
+        <!-- <li class="slds-carousel__indicator" role="presentation">
+          <a id="indicator-id-84" class="slds-carousel__indicator-action panel3" role="tab" tabindex="-1" aria-selected="false" aria-controls="content-id-81" title="Download SalesforceA tab">
+            <span class="slds-assistive-text">Download SalesforceA tab</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div> -->
