@@ -15,10 +15,26 @@ public with sharing class OrderController {
     }
 
     @AuraEnabled(cacheable=true)
-    public static List<Order> retrievePendingOrders() {
+    public static List<Delivery__c> retrieveDeliveries() {
         return 
-        [SELECT Status, ShippingAddress, Pricebook2Id, Delivery__c 
-        FROM Order where Delivery__r.Delivery_Status__c = 'Pending'];
+        [SELECT Delivery_Status__c, Shipping_City__c, ShippingCountry__c, ShippingPostalCode__c, ShippingState__c, ShippingStreet__c
+        FROM Delivery__c];
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Delivery__c> retrievePendingOrders() {
+        return 
+        [SELECT Name, Order__r.OrderNumber, Shipping_City__c, ShippingCountry__c, ShippingPostalCode__c, ShippingState__c,  ShippingStreet__c
+        FROM Delivery__c 
+        WHERE Delivery_Status__c = 'Pending'];
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Delivery__c> retrieveCompletedOrders() {
+        return 
+        [SELECT Name, Order__r.OrderNumber, Shipping_City__c, ShippingCountry__c, ShippingPostalCode__c, ShippingState__c,  ShippingStreet__c
+        FROM Delivery__c 
+        WHERE Delivery_Status__c = 'Delivered'];
     }
 
     @AuraEnabled(cacheable=true)
@@ -28,6 +44,13 @@ public with sharing class OrderController {
         FROM OrderItem 
         WHERE Product2.Name=:title];
         
-        
     }
+
+    // private static String queryBuilder(String fields, String whereClause) {
+    //     // Sanitize strings before building query string
+    //     String fieldsSanitized = String.escapeSingleQuotes(fields);
+    //     String whereClauseSanitized = String.escapeSingleQuotes(whereClause);
+
+    //     return 'SELECT :fieldsSanitized FROM OrderItem WHERE :whereClauseSanitized,CreatedById=0058c00000ABNVeAAP WITH SECURITY_ENFORCED';
+    // }
 }

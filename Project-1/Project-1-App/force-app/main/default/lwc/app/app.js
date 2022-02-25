@@ -29,7 +29,7 @@ export default class App extends LightningElement {
             this.isShowingOrdersView = false;
             this.isShowingChatView = false;
             this.isShowingFaqView = false;
-        } else if (component == 'order') {
+        } else if (component == 'orders') {
             this.isShowingHomeView = false;
             this.isShowingListingsView = false;
             this.isShowingOrdersView = true;

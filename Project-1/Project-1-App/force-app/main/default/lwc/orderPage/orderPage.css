@@ -1,12 +1,36 @@
 .container {
     margin: 0;
-    padding: 30px;
+    padding: 15px;
+    padding-top: 19px;
+    background-color: #c2c2c2;
 }
 
 lightning-card{
-    padding: 20px;
+    padding: 40px;
+    
 }
 
 lightning-record-form{
+    padding: 10px;
+}
+
+lightning-button{
+    padding: 2em;
+    height:100px;
+}
+
+.filters{
+    display: inline-flex;
+}
+
+.padding{
     padding: 20px;
+}
+
+.card-body{
+    padding: 5px;
+}
+
+input{
+    width: 80%;
 }
