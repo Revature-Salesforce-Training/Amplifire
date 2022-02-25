@@ -1,0 +1,19 @@
+/**
+    Created by Sean Whitley
+    Team AuraForce
+    Revature, 20220118 Cohort
+ */
+
+.container {
+    margin: 0;
+    width: 75vw;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.action-button {
+    background-color: #357a99;
+    color: #000000;
+}

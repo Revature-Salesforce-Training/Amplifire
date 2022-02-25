@@ -1,0 +1,36 @@
+<template>
+    <header>
+        <div class="branding">
+            <!-- Brand Icon -->
+            <img class="logo-img" 
+                src="https://cdn.discordapp.com/attachments/945402462192435220/945409933623586816/logo.png"
+                alt="TNM Logo"
+            >
+            <!-- Portal Name -->
+            <div class="title">Bookseller Portal</div>
+        </div>
+        <!-- Navigation links container -->
+        <div class="links-container">
+            <!-- Home -->
+            <button class="nav-link slds-button" onclick={handleNavigation}>
+                Home
+            </button>
+            <!-- Listings -->
+            <button class="nav-link slds-button" onclick={handleNavigation}>
+                Listings
+            </button>
+            <!-- Orders -->
+            <button class="nav-link slds-button" onclick={handleNavigation}>
+                Orders
+            </button>
+            <!-- Chat -->
+            <button class="nav-link slds-button" onclick={handleNavigation}>
+                Chat
+            </button>
+            <!-- FAQ -->
+            <button class="nav-link slds-button" onclick={handleNavigation}>
+                F.A.Q.
+            </button>
+        </div>
+    </header>
+</template>

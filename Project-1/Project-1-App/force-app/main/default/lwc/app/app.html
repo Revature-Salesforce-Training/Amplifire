@@ -1,0 +1,31 @@
+<template>
+  <div class="app-container">
+      <!-- Header component w/ page switching via event handler -->
+    <c-header
+      onnavigate={handleNavigation}
+    ></c-header>
+    <div class="body-container">
+      <!-- Components go here! -->
+      <template if:true={isShowingHomeView}>
+        <!-- Home/Info Dashboard -->
+      </template>
+      <template if:true={isShowingListingsView}>
+        <!-- Listings Management -->
+        <c-listing-component></c-listing-component>
+      </template>
+      <template if:true={isShowingOrdersView}>
+        <!-- Orders -->
+        <c-order-page></c-order-page>
+        
+      </template>
+      <template if:true={isShowingChatView}>
+        <!-- Agent Chat -->
+
+      </template>
+      <template if:true={isShowingFaqView}>
+        <!-- Frequently Asked Questions -->
+
+      </template>
+    </div>
+  </div>
+</template>

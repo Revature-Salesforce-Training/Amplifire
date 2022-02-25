@@ -1,0 +1,183 @@
+<!-- /*
+*	Author:- Gabriel Anton
+*	Description:- 
+*	Created:- 2/22/22
+*/ -->
+
+<template>
+
+<div class="container">
+    <h1 slot="title" style="font-size: 3em;">Order Manager</h1>
+    <br>
+    <div style="background-color: white;">
+    <div class="padding">
+        
+        <div class="filters">
+        <button onclick={handleAll}>All Orders</button>
+        <br>
+        <button onclick={handlePending}>Pending Orders</button>
+        <br>
+        <button onclick={handleCompleted}>Completed Orders</button>
+        <br>
+       </div>
+        
+        <template if:true={allIsSelected}>
+        <!-- <lightning-card class="card-body">
+            <template if:true={orders.data}>
+                <ul>
+                    <template for:each={orders.data} for:item="order">
+                        <li key={order.Id}><hr></li>
+                        <li key={order.Id}>Order Status:  {order.Status}</li>
+                        <li key={order.Id}>Order Number: {order.OrderNumber}</li>
+                        <li key={order.Id}><hr></li>
+                    </template>
+                </ul>
+            </template>
+        </lightning-card> -->
+
+        <lightning-card class="card-body">  
+         <div style="height: 300px;">
+                <lightning-datatable
+                        key-field="Id"
+                        data={orders.data}
+                        columns={orderfields}>
+                </lightning-datatable>
+            </div>    
+        </lightning-card>
+        
+        <br>
+        <br>
+
+        </template>
+
+        <!-- Pending is selected -->
+
+        <template if:true={pendingIsSelected}>
+
+
+            <!-- <lightning-card class="card-body">
+                <template if:true={pending_orders.data}>
+                    <ul>
+                        <template for:each={pending_orders.data} for:item="pending_order">
+                            <li key={pending_order.Id}><hr></li>
+                            <li key={pending_order.Id}>Order Number:  {pending_order.Order__r.OrderNumber}</li>
+                            <li key={pending_order.Id}>Delivery Name: {pending_order.Name}</li>
+                            <li key={pending_order.Id}><lightning-output-field key={pending_order.Id} field-name={pending_order.Delivery_Status__c}>
+                            </lightning-output-field></li>
+                            <li key={pending_order.Id}>Address: {pending_order.ShippingStreet__c}, {pending_order.Shipping_City__c}, {pending_order.ShippingState__c}, {pending_order.ShippingPostalCode__c}, {pending_order.ShippingCountry__c}</li>
+                            <li key={pending_order.Id}><hr></li>
+                        </template>
+                    </ul>
+                </template>
+            </lightning-card> -->
+
+            <lightning-card class="card-body">  
+                <div style="height: 300px;">
+                       <lightning-datatable
+                               key-field="Id"
+                               data={pending_orders.data}
+                               columns={deliveryfields}>
+                       </lightning-datatable>
+                   </div>    
+               </lightning-card>
+
+
+
+            </template>
+
+
+            <!-- Completed is selected -->
+
+            <template if:true={completedIsSelected}>
+
+
+                <!-- <lightning-card class="card-body">
+                    <template if:true={completed_orders.data}>
+                        <ul>
+                            <template for:each={completed_orders.data} for:item="completed_order">
+                                <li key={completed_order.Id}><hr></li>
+                                <li key={completed_order.Id}>Order Number:  {completed_order.Order__r.OrderNumber}</li>
+                                <li key={completed_order.Id}>Delivery Name: {completed_order.Name}</li>
+                                <li key={completed_order.Id}><lightning-output-field key={completed_order.Id} field-name={completed_order.Delivery_Status__c}>
+                                </lightning-output-field></li>
+                                <li key={completed_order.Id}>Address: {completed_order.ShippingStreet__c}, {completed_order.Shipping_City__c}, {completed_order.ShippingState__c}, {completed_order.ShippingPostalCode__c}, {completed_order.ShippingCountry__c}</li>
+                                <li key={completed_order.Id}><hr></li>
+                            </template>
+                        </ul>
+                    </template>
+                </lightning-card> -->
+
+
+                <lightning-card class="card-body">  
+                    <div style="height: 300px;">
+                           <lightning-datatable
+                                   key-field="Id"
+                                   data={completed_orders.data}
+                                   columns={deliveryfields}>
+                           </lightning-datatable>
+                       </div>    
+                   </lightning-card>
+
+
+
+                </template>
+
+            </div>
+
+            </div>
+   
+    <br>
+
+
+    <div style="background-color: white;">
+    <div class="padding">
+
+        <h1>Check Out How Each Of Your Books Are Doing</h1>
+        <br>
+        <input type="text" placeholder="Enter Title To Search Number Of Orders" onchange={handleInput}></input>
+        <br>
+        <button onclick={clearSearch}>Clear Search</button>
+        <br>
+
+        <template if:true={titleIsSearched}>
+
+
+            <lightning-card class="card-body">
+                <template if:true={orders_with_title.data}>
+                    <ul>
+                        <template for:each={orders_with_title.data} for:item="order_by_title">
+                            <li key={order_by_title.Id}><hr></li>
+                            <li key={order_by_title.Id}>Order Number: {order_by_title.Order.OrderNumber}</li>
+                            <li key={order_by_title.Id}>Order Status: {order_by_title.Status}</li>
+                            <li key={order_by_title.Id}>Order Address: {order_by_title.Order.ShippingAddress}</li>
+                            <li key={order_by_title.Id}>Order Pricebook2Id: {order_by_title.Order.Pricebook2Id}</li>
+                            <li key={order_by_title.Id}><hr></li>
+                            
+                        </template>
+                    </ul>
+                </template>
+            </lightning-card>
+
+            <!-- <lightning-card class="card-body">  
+                <div style="height: 300px;">
+                       <lightning-datatable
+                               key-field="Id"
+                               data={orders_with_title.data}
+                               columns={orderitemfields}>
+                       </lightning-datatable>
+                   </div>    
+               </lightning-card> -->
+
+
+
+
+            </template>
+
+
+</div>
+    
+</div>
+
+</div>
+    
+</template>
