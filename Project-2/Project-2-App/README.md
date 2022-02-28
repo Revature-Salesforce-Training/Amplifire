@@ -22,7 +22,8 @@ Proposed BisMod for the Project 2 business idea. Here's a link to the [biz model
 
 ## Business Role Hierarchy and Data Model
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+See [p2 role hierarchy](https://drive.google.com/file/d/1fUtXRtYzVfSbu9P03kE3XoZ6-9EJH5Xr/view?usp=sharing)
+
 
 ## Read All About It
 
