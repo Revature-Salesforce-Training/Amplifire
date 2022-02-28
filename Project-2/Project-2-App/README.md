@@ -1,13 +1,20 @@
 # Project 2: City Of Angels Talent & Recruitment Agency
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
-
 ## Dev Model
 Let's review/refresh pbd so that we all know the steps
 
--  Follow Best Practices: code headers; comments etc.
+- Follow Best Practices: code headers; comments etc.
 
 ## Businees Requirements & User Stories
+
+- Tentative Requirements:
+    - portal for big studio clients
+    - portal for individual clients
+    - login/registration page
+    - casting app that is just a clone of sales app; intended for field reps and studios
+    - recruitment app that is also clone of sales app; intended for scouts and individual artists
+    - IMPORTANT Difference between scouts and fld reps: different contract structure: 2 record types on the contract standard object
+            - both fld reps and scouts work on commission and take a percentage off closed deals; freps should be capped at 30% contract value; scouts have no cap
 
 ## Business Model
 
