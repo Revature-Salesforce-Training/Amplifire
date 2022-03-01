@@ -2,13 +2,14 @@
 
 # User Stories
 - [ ] as an artist, I can manage my marketing campaigns and branding
-- [ ] User can communicate with assigned 
+- [ ] User can communicate with assigned agent
 - [ ] User can view upcoming casting calls 
 - [ ] User can find help with frequently asked questions
 - [ ] User can link their social media accounts to their personal portal
 - [ ] studio executive can view lists of available artists for casting calls
 - [ ] user can find help with frequently asked questions
-- [ ] user can login/register to their portal
+- [ ] user can login to their portal
+- [ ] as a new client, i can click a button on my agent's page to register for a portal 
 - [ ] as a studio representative, i can make an event,like casting call, to invite talent
 
 # Employee Stories
