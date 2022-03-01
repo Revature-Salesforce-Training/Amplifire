@@ -19,3 +19,9 @@ Revature Salesforce squad, JAN18-2022 cohort
 - [Project 1 ERD](https://github.com/Revature-Salesforce-Training/Amplifire/wiki/Project-1-ERD)
 - [Project 1 Business Model](https://github.com/Revature-Salesforce-Training/Amplifire/wiki/Project-1-Business-Model)
 - [Apex Trigger Ideas & Use Cases](https://github.com/Revature-Salesforce-Training/Amplifire/wiki/Trigger-Use-Cases)
+
+## Project 2
+- [User Stories](https://github.com/Revature-Salesforce-Training/Amplifire/blob/main/Project-2/P2%20User%20Stories.md)
+- [Project 2 ERD]()
+- [Project 2 Business Model]()
+- [Project Requirements]()
