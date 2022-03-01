@@ -25,3 +25,4 @@ Revature Salesforce squad, JAN18-2022 cohort
 - [Project 2 ERD]()
 - [Project 2 Business Model]()
 - [Project Requirements]()
+- [Project 2 Wireframe](https://github.com/Revature-Salesforce-Training/Amplifire/wiki/Project-2-Wireframe)
