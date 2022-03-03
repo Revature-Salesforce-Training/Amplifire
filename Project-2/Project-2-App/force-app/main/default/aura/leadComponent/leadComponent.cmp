@@ -1,0 +1,113 @@
+<!-- Host an Aura component in a harness app. 
+
+Create an apex method that returns a list of records based on a search string.
+
+Link that Apex to your Aura component and print out each record when the 
+user clicks a button and fills out a text box that contains the search 
+string. Hint: maybe there is a component in the component library for 
+Aura, similar to the iterators we used with LWC. -->
+
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" controller="LeadController">
+    <aura:attribute name="all_leads" type="Lead[]"/>
+    <aura:attribute name="open_leads" type="Lead[]"/>
+    <aura:attribute name="lost_leads" type="Lead[]"/>
+
+    <aura:attribute name="isAllLeads" type="Boolean"/>
+    <aura:attribute name="isOpenLeads" type="Boolean"/>
+    <aura:attribute name="isLostLeads" type="Boolean"/>
+
+    <aura:attribute name="recordId" type="Id"/>
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.init}"/> -->
+    <!-- <aura:registerEvent name="newIndividualClient" type="c:NewIndividualLeadEvent"/>
+    <aura:registerEvent name="newStudioClient" type="c:NewStudioLeadEvent"/> -->
+
+    <button class="slds-align_absolute-center" onclick="{!c.handleOpen}">Open Leads</button>
+    <button class="slds-align_absolute-center" onclick="{!c.handleLost}">Lost Leads</button>
+    <button class="slds-align_absolute-center" onclick="{!c.handleAll}">All Leads</button>
+
+
+    <aura:if isTrue="{!v.isAllLeads}">
+
+    <aura:iteration items="{!v.all_leads}" var="lead">
+
+        <lightning:card title="{!lead.Name}" iconName="standard:lead">
+
+            <lightning:recordEditForm objectApiName="Lead" recordId="{!lead.Id}">
+
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField fieldName="Email"/>
+                <lightning:inputField fieldName="Company"/>
+                <lightning:inputField fieldName="Rating"/>
+                <lightning:inputField fieldName="Status"/>
+
+                <lightning:button label="Update Lead" type="submit"/>
+
+            </lightning:recordEditForm>
+
+        </lightning:card>
+
+    </aura:iteration>
+</aura:if> 
+
+
+
+
+    <!-- Open Leads -->
+    <aura:if isTrue="{!v.isOpenLeads}">
+
+    <aura:iteration items="{!v.open_leads}" var="lead">
+
+        <lightning:card title="{!lead.Name}" iconName="standard:lead">
+
+            <lightning:recordEditForm objectApiName="Lead" recordId="{!lead.Id}">
+
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField fieldName="Email"/>
+                <lightning:inputField fieldName="Company"/>
+                <lightning:inputField fieldName="Status"/>
+
+                <lightning:button label="Update Lead" type="submit"/>
+
+            </lightning:recordEditForm>
+
+        </lightning:card>
+
+    </aura:iteration>
+</aura:if>
+
+
+
+
+    <!-- Lost Leads -->
+
+<aura:if isTrue="{!v.isLostLeads}">
+    <aura:iteration items="{!v.lost_leads}" var="lead">
+
+        <lightning:card title="{!lead.Name}" iconName="standard:lead">
+
+            <lightning:recordEditForm objectApiName="Lead" recordId="{!lead.Id}">
+
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField fieldName="Email"/>
+                <lightning:inputField fieldName="Company"/>
+                <lightning:inputField fieldName="Status"/>
+
+                <lightning:button label="Update Lead" type="submit"/>
+
+            </lightning:recordEditForm>
+
+        </lightning:card>
+
+    </aura:iteration>
+</aura:if>
+
+
+
+    <!-- <button value="cmpBtn" class="slds-align_absolute-center" onclick="{!c.handleIndividualLead}">Click to fire component event!</button>
+    <button value="appBtn" class="slds-align_absolute-center" onclick="{!c.handleStudioLead}">Click to fire app event!</button> -->
+
+    
+
+
+
+</aura:component>	
