@@ -8,11 +8,11 @@ string. Hint: maybe there is a component in the component library for
 Aura, similar to the iterators we used with LWC. -->
 
 <aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" controller="LeadController">
-    <aura:attribute name="all_leads" type="Lead[]"/>
+    <aura:attribute name="working_leads" type="Lead[]"/>
     <aura:attribute name="open_leads" type="Lead[]"/>
     <aura:attribute name="lost_leads" type="Lead[]"/>
 
-    <aura:attribute name="isAllLeads" type="Boolean"/>
+    <aura:attribute name="isWorkingLeads" type="Boolean"/>
     <aura:attribute name="isOpenLeads" type="Boolean"/>
     <aura:attribute name="isLostLeads" type="Boolean"/>
 
@@ -23,12 +23,12 @@ Aura, similar to the iterators we used with LWC. -->
 
     <button class="slds-align_absolute-center" onclick="{!c.handleOpen}">Open Leads</button>
     <button class="slds-align_absolute-center" onclick="{!c.handleLost}">Lost Leads</button>
-    <button class="slds-align_absolute-center" onclick="{!c.handleAll}">All Leads</button>
+    <button class="slds-align_absolute-center" onclick="{!c.handleWorking}">Working Leads</button>
 
 
-    <aura:if isTrue="{!v.isAllLeads}">
+    <aura:if isTrue="{!v.isWorkingLeads}">
 
-    <aura:iteration items="{!v.all_leads}" var="lead">
+    <aura:iteration items="{!v.working_leads}" var="lead">
 
         <lightning:card title="{!lead.Name}" iconName="standard:lead">
 

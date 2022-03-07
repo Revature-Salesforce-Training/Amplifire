@@ -25,7 +25,7 @@
 
     },
 
-    handleAll : function(component, event, helper){
+    handleWorking : function(component, event, helper){
         helper.displayAllLeads(component);
     
     }

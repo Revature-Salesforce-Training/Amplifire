@@ -39,14 +39,14 @@
     },
 
     displayAllLeads : function(component) {
-        var action = component.get("c.retrieveAllLeads");
+        var action = component.get("c.retrieveAllWorkingLeads");
         component.set("v.isOpenLeads", false);
-        component.set("v.isAllLeads", true);
+        component.set("v.isWorkingLeads", true);
         component.set("v.isLostLeads", false);
         action.setCallback(this, function(response){
             var state = response.getState();
             if (state === "SUCCESS") {
-                component.set("v.all_leads", response.getReturnValue());
+                component.set("v.working_leads", response.getReturnValue());
             }
         });
         $A.enqueueAction(action);
