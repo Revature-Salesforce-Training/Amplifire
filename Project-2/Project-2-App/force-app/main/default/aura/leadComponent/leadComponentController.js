@@ -28,5 +28,13 @@
     handleWorking : function(component, event, helper){
         helper.displayAllLeads(component);
     
+    },
+
+    handleMinimize : function(component) {
+        
+            component.set("v.isOpenLeads", false);
+            component.set("v.isWorkingLeads", false);
+            component.set("v.isLostLeads", false);
+        
     }
 })

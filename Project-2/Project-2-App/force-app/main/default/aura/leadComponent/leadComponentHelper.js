@@ -1,11 +1,10 @@
 ({
-
     
 
     displayOpenLeads : function(component) {
         var method = component.get("c.retrieveAllOpenLeads");
         component.set("v.isOpenLeads", true);
-        component.set("v.isAllLeads", false);
+        component.set("v.isWorkingLeads", false);
         component.set("v.isLostLeads", false);
         //no params required in this example
         method.setCallback(this, function(response){
@@ -23,7 +22,7 @@
     displayLostLeads : function(component) {
         var method = component.get("c.retrieveAllUncovertedLeads");
         component.set("v.isOpenLeads", false);
-        component.set("v.isAllLeads", false);
+        component.set("v.isWorkingLeads", false);
         component.set("v.isLostLeads", true);
         //no params required in this example
         method.setCallback(this, function(response){

@@ -1,2 +1,41 @@
 .THIS {
+    padding: 2.6em;
+    background-color: #003262;
+    /* margin: 4rem 0 4rem 0; */
+    align-items: center;
+    /* display: flex; */
+    flex-direction: column;
+
+    
+}
+
+.THIS .action-buttons{
+        padding: 1.5em;
+        background-color: #FDB515;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.THIS .container{
+    background-color: #FDB515;
+    align-items: center;
+    height: auto;
+    
+}
+
+.THIS .flex-button{
+    display: flex;
+}
+
+.THIS .header{
+    align-items: center;
+    color: white;
+    height: auto;
+    justify-content: center;
+
+}
+
+.THIS .leads{
+    width:90%;
 }

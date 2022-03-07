@@ -21,10 +21,41 @@ Aura, similar to the iterators we used with LWC. -->
     <!-- <aura:registerEvent name="newIndividualClient" type="c:NewIndividualLeadEvent"/>
     <aura:registerEvent name="newStudioClient" type="c:NewStudioLeadEvent"/> -->
 
-    <button class="slds-align_absolute-center" onclick="{!c.handleOpen}">Open Leads</button>
-    <button class="slds-align_absolute-center" onclick="{!c.handleLost}">Lost Leads</button>
-    <button class="slds-align_absolute-center" onclick="{!c.handleWorking}">Working Leads</button>
+<div class="container slds-align_absolute-center">
 
+
+<div class="header">
+
+
+    <div class="slds-text-heading_medium slds-align_absolute-center">
+        LEADS
+    </div>
+    <div class="slds-text-heading_small slds-align_absolute-center">
+        View Your Leads Below
+    </div>
+
+</div>
+
+<br/>
+<div class="action-buttons">
+    
+    <button class="slds-align_absolute-center" onclick="{!c.handleOpen}">Open Leads</button>
+    <br/>
+    <button class="slds-align_absolute-center" onclick="{!c.handleLost}">Lost Leads</button>
+    <br/>
+    <button class="slds-align_absolute-center" onclick="{!c.handleWorking}">Working Leads</button>
+    
+</div>
+
+<br/>
+
+<button class="flex-button slds-align_absolute-center" onclick="{!c.handleMinimize}">Minimize</button>
+
+<br/>
+
+
+
+<div class="leads">
 
     <aura:if isTrue="{!v.isWorkingLeads}">
 
@@ -101,10 +132,16 @@ Aura, similar to the iterators we used with LWC. -->
     </aura:iteration>
 </aura:if>
 
-
+</div>
 
     <!-- <button value="cmpBtn" class="slds-align_absolute-center" onclick="{!c.handleIndividualLead}">Click to fire component event!</button>
     <button value="appBtn" class="slds-align_absolute-center" onclick="{!c.handleStudioLead}">Click to fire app event!</button> -->
+
+
+
+
+</div>
+    
 
     
 
