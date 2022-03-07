@@ -31,7 +31,7 @@ public with sharing class LeadTriggerHelper {
             a.Name = l.Company;
             a.Phone = l.Phone;
 
-            c.AccountId = a.Id;
+            // c.AccountId = a.ID;
 
             accounts.add(a);
             contacts.add(c);
