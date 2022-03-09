@@ -1,3 +1,11 @@
+// <!-- 
+
+// Author: Gabriel Anton 
+// Date: 3/8/22 
+// Description: Lead Trigger Test
+
+// -->
+
 @isTest(SeeAllData=true)
 public with sharing class LeadTriggerTest {
     public static testMethod void ContactCreatedTest() {
@@ -26,9 +34,6 @@ public with sharing class LeadTriggerTest {
         System.assert((c[0].LastName == nl.LastName) && (c[0].Phone == nl.Phone) && (c[0].Email == nl.Email) && (c[0].Title == nl.Title));
 
         Test.StopTest();
-
-
-        
 
 
 

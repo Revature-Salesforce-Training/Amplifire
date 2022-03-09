@@ -1,3 +1,11 @@
+// <!-- 
+
+// Author: Gabriel Anton 
+// Date: 3/8/22 
+// Description: Lead Component Helper
+
+// -->
+
 ({
     
 
@@ -49,5 +57,12 @@
             }
         });
         $A.enqueueAction(action);
+    },
+
+    fireEvent : function() {
+        var newContact = $A.get("e.c:NewContactEvent");
+        newContact.setParams({"newContactMessage" : "You have a new contact!"});
+        newContact.fire();
+        console.log("New Contacts!")
     }
 })

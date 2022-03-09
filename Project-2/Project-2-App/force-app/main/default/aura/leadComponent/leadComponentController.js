@@ -1,3 +1,11 @@
+// <!-- 
+
+// Author: Gabriel Anton 
+// Date: 3/8/22 
+// Description: Lead Component Controller
+
+// -->
+
 ({
 
 
@@ -30,11 +38,15 @@
     
     },
 
-    handleMinimize : function(component) {
+    handleMinimize : function(component, event, helper) {
         
             component.set("v.isOpenLeads", false);
             component.set("v.isWorkingLeads", false);
             component.set("v.isLostLeads", false);
         
+    },
+
+    handleNewContact : function(component, event, helper){
+        helper.fireEvent();
     }
 })

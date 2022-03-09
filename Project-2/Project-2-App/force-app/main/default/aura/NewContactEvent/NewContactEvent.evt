@@ -1,0 +1,11 @@
+<!-- 
+
+Author: Gabriel Anton 
+Date: 3/8/22 
+Description: New contact Event
+
+-->
+
+<aura:event type="APPLICATION" description="New Contact">
+    <aura:attribute name="newContactMessage" type="String"/>
+</aura:event>
