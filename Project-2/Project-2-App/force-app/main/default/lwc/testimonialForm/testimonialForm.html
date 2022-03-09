@@ -1,0 +1,18 @@
+<template>
+    <lightning-record-edit-form
+        object-api-name="Account"
+    >
+        <lightning-messages> </lightning-messages>
+        <lightning-input-field field-name="Testimonial__c"> </lightning-input-field>
+        <lightning-input-field field-name="Name"> </lightning-input-field>
+        <lightning-button
+            class="slds-m-top_small"
+            variant="brand"
+            type="submit"
+            name="update"
+            label="Add Testimonial"
+            onclick={handleSubmit}
+        >
+        </lightning-button>
+    </lightning-record-edit-form>
+</template>
