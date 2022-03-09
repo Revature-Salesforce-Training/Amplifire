@@ -1,3 +1,11 @@
+// <!-- 
+
+// Author: Gabriel Anton 
+// Date: 3/8/22 
+// Description: Lead Trigger Utility Class
+
+// -->
+
 public with sharing class LeadTriggerHelper {
     public static void createNewContact(List<Lead> leadlist) {
         List<Contact> contacts = new List<Contact>();

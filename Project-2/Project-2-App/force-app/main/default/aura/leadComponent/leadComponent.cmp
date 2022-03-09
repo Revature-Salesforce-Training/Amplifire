@@ -1,11 +1,10 @@
-<!-- Host an Aura component in a harness app. 
+<!-- 
 
-Create an apex method that returns a list of records based on a search string.
+Author: Gabriel Anton 
+Date: 3/8/22 
+Description: Lead Component
 
-Link that Apex to your Aura component and print out each record when the 
-user clicks a button and fills out a text box that contains the search 
-string. Hint: maybe there is a component in the component library for 
-Aura, similar to the iterators we used with LWC. -->
+-->
 
 <aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" controller="LeadController">
     <aura:attribute name="working_leads" type="Lead[]"/>
@@ -18,13 +17,15 @@ Aura, similar to the iterators we used with LWC. -->
 
     <aura:attribute name="recordId" type="Id"/>
     <!-- <aura:handler name="init" value="{!this}" action="{!c.init}"/> -->
-    <!-- <aura:registerEvent name="newIndividualClient" type="c:NewIndividualLeadEvent"/>
-    <aura:registerEvent name="newStudioClient" type="c:NewStudioLeadEvent"/> -->
+    <aura:registerEvent name="newContact" type="c:NewContactEvent"/>
+
+
 
 <div class="container slds-align_absolute-center">
+<c:leadHeader></c:leadHeader>
+<br/>
 
-
-<div class="header">
+<!-- <div class="header">
 
 
     <div class="slds-text-heading_medium slds-align_absolute-center">
@@ -34,7 +35,7 @@ Aura, similar to the iterators we used with LWC. -->
         View Your Leads Below
     </div>
 
-</div>
+</div> -->
 
 <br/>
 <div class="action-buttons">
@@ -134,10 +135,8 @@ Aura, similar to the iterators we used with LWC. -->
 
 </div>
 
-    <!-- <button value="cmpBtn" class="slds-align_absolute-center" onclick="{!c.handleIndividualLead}">Click to fire component event!</button>
-    <button value="appBtn" class="slds-align_absolute-center" onclick="{!c.handleStudioLead}">Click to fire app event!</button> -->
-
-
+<br/>
+    <button value="appBtn" class="slds-align_absolute-center" onclick="{!c.handleNewContact}">Submit Converted Leads</button>
 
 
 </div>
