@@ -5,6 +5,7 @@
 */
 
 ({
+    //maps out the columns
     init: function (component, event, helper) {
         component.set('v.columns', [
             {label: 'Account name', fieldName: 'Name', type: 'text'}, 
