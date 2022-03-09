@@ -15,14 +15,14 @@ public with sharing class DupeAccountTriggerTest {
         insert a;
 
         Test.startTest();
-        DupeAccountTriggerHelper.DupeAccount(mockAcc);
+            DupeAccountTriggerHelper.DupeAccount(mockAcc);
 
-        List<Account> mockAcc2 = new List<Account>();
-        b.Name = 'Spalding';
-        insert b;
-        mockAcc2.add(b);
+            List<Account> mockAcc2 = new List<Account>();
+            b.Name = 'Spalding';
+            insert b;
+            mockAcc2.add(b);
 
-        System.assert(DupeAccountTriggerHelper.DupeAccount(mockAcc2) == false);
+            System.assert(DupeAccountTriggerHelper.DupeAccount(mockAcc2) == false);
 
         Test.stopTest();
     }

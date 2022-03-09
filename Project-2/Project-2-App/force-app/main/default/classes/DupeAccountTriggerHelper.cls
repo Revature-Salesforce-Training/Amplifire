@@ -7,6 +7,7 @@
 public with sharing class DupeAccountTriggerHelper {
 
     public static boolean DupeAccount(List<Account> accList) {
+        
         try {
             for(Account acc : accList) {
                 for(Account acc2 : [Select Id, Name FROM Account]) {
