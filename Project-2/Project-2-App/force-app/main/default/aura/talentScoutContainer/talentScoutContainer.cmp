@@ -1,0 +1,43 @@
+<aura:component>
+    <!-- Attributes -->
+    <aura:attribute name="isNotification" type="boolean" default="false" />
+    <aura:attribute name="isList" type="boolean" default="true" />
+    <aura:attribute name="username" type="string" default="jack" />
+
+    <!-- Handlers -->
+    <aura:handler name="init" value="{!this}" action="{! c.doInit }" /> 
+
+    <!-- Notification element -->
+    <lightning:card 
+            iconName="standard:lead" 
+            title="Potential Signees" 
+            class="slds-size_2-of-3 slds-m-around_medium slds-p-around_medium">
+        <aura:set attribute="actions">
+            <aura:if isTrue="{! v.isList }">
+                <lightning:button label="New Lead" onclick="{! c.handleLeadButton }"/>
+
+                <aura:set attribute="else">
+                    <lightning:button label="Cancel" onclick="{! c.handleLeadButton }"/>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+        <aura:if isTrue="{! v.isNotification }">
+        <!-- Display the  -->
+        </aura:if>
+
+        <!-- Main component -->
+        <aura:if isTrue="{! v.isList }">
+            <!-- Show list of Leads -->
+            <c:newLeadsList />
+
+            <aura:set attribute="else">
+                <!-- False -->
+                <c:newLeadForm />
+            </aura:set>
+        </aura:if>
+
+        <aura:if isTrue="{! v.username }">
+            <c:twitterView username="{! v.username }" />
+        </aura:if>
+    </lightning:card>
+</aura:component>	

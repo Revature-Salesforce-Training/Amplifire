@@ -1,0 +1,27 @@
+.actions-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.twitter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2em;
+}
+
+.profile-image-container {
+    margin-right: 2em;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 2em;
+}
+
+img {
+    border-radius: 50%;
+}

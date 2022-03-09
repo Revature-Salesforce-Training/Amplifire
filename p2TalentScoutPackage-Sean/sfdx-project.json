@@ -1,0 +1,18 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "package": "TalentScoutPackage",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.0",
+            "default": true
+        }
+    ],
+    "name": "P2-features",
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "TalentScoutPackage": "0Ho8c000000bldlCAA"
+    }
+}

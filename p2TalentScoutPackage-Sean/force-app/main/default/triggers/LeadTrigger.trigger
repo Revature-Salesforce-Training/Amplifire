@@ -1,8 +1,7 @@
-trigger LeadTrigger on Lead (after update) {
+trigger LeadTrigger on Lead (before insert) {
+    
     switch on Trigger.operationType {
         when BEFORE_INSERT, BEFORE_UPDATE {
-            LeadTriggerHelper.createNewContact(Trigger.new);
-            
             // Validation
             NewLeadTriggerHelper.checkForTwitterUsername(Trigger.new);
         }

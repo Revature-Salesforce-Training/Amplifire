@@ -1,0 +1,17 @@
+<aura:component>
+    <!-- Events -->
+    <aura:registerEvent name="newLeadAppEvent" type="c:newLeadEvent" />
+
+    <lightning:card class="slds-p-around_medium" title="Add New Lead!">
+        <lightning:recordEditForm 
+                aura:id="recordEditForm"
+                objectApiName="Lead">
+            <lightning:messages />
+            <lightning:inputField fieldName="Name" />
+            <lightning:inputField fieldName="Company" />
+            <lightning:inputField fieldName="Email" />
+            <lightning:inputField fieldName="Twitter_Handle__c" />
+            <lightning:button class="slds-m-top_small" type="submit" label="Save" onclick="{! c.handleSubmit }"/>
+        </lightning:recordEditForm>
+    </lightning:card>
+</aura:component>	

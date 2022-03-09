@@ -1,0 +1,34 @@
+<aura:component controller="NewLeadsListController">
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+
+    <!-- Attributes -->
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="data" type="Lead" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+
+    <lightning:card class="slds-p-around_medium">
+        <!-- LDS -->
+        <force:recordData 
+            aura:id="leadsList"
+            recordId="{! v.recordId }"
+            targetFields="{! v.data }"
+            layoutType="FULL"
+            />
+        
+        <!-- Body/Datatable -->
+        <lightning:datatable
+            keyField="Id"
+            columns="{! v.columns }"
+            data="{! v.data }"
+            hideCheckBoxColumn="true"
+            onrowselection="{! c.getSelected }"
+            defaultSortDirection="{! v.defaultSortDirection }"
+            sortedDirection="{! v.sortDirection }"
+            sortedBy="{! v.sortedBy }"
+            onsort="{! c.handleSort }">
+        </lightning:datatable>
+    </lightning:card>
+</aura:component>	

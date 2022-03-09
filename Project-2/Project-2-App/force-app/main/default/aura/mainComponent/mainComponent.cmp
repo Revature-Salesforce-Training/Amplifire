@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component implements="forceCommunity:themeLayout,forceCommunity:availableForAllPageTypes">
     <c:leadComponent></c:leadComponent>
     <c:AccountList></c:AccountList>
 </aura:component>	

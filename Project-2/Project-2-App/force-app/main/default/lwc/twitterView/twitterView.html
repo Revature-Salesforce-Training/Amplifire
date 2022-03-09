@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Twitter Info" class="slds-p-around_medium">
+        <div slot="actions" class="actions-container">
+            <lightning-input 
+                type="text" label="Search by username!" onchange={handleChange}>
+            </lightning-input>
+            <lightning-button label="Search" onclick={handleClick}></lightning-button>
+        </div>
+        <template if:true={data} >
+            <div class="twitter-container"> 
+                <div class="profile-image-container">
+                    <img src={profileImageUrl} alt="Profile Image">
+                </div>
+                <div class="info-container">
+                    <div class="name">
+                        <p>{name}</p>
+                    </div>
+                    <div class="bio">
+                        <p>{description}</p>
+                    </div>
+                    <div class="url">
+                        <a href={profileUrl}>Go to profile</a>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>
