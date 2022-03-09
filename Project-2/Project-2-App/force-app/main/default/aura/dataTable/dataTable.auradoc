@@ -1,6 +1,11 @@
+<!-- /*
+*	Author:- Drew Williams
+*	Description:- Data table that displays the current Accounts
+*	Date: 3/8/22
+*/ -->
+
 <aura:documentation>
-	<aura:description>Documentation</aura:description>
+	<aura:description>Data table that shows the current Accounts</aura:description>
 	<aura:example name="ExampleName" ref="exampleComponentName" label="Label">
-		Example Description
 	</aura:example>
 </aura:documentation>

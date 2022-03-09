@@ -1,3 +1,9 @@
+<!-- /*
+*	Author:- Drew Williams
+*	Description:- Data table that displays the current Accounts
+*	Date: 3/8/22
+*/ -->
+
 <aura:component controller="TableController" implements="flexipage:availableForAllPageTypes" access="global">
     <aura:attribute name="data" type="Object"/>
     <aura:attribute name="columns" type="List"/>

@@ -1,3 +1,9 @@
+/*
+*	Author:- Drew Williams
+*	Description:- Map LWC component that shows our store HQ at the Hollywood Sign
+*	Date: 3/8/22
+*/
+
 import { LightningElement } from 'lwc';
 
 export default class Map extends LightningElement {

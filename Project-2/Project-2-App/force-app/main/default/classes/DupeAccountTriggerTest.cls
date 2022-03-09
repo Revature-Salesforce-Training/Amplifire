@@ -1,3 +1,9 @@
+/*
+*	Author:- Drew Williams
+*	Description:- Account trigger that checks if name on Account is duplicated. If so, displays error message.
+*	Date: 3/8/22
+*/
+
 @isTest(SeeAllData=true)
 public with sharing class DupeAccountTriggerTest {
     public static testMethod void TriggerTest() {
