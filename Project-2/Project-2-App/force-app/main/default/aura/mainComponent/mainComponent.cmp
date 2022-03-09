@@ -1,0 +1,4 @@
+<aura:component>
+    <c:leadComponent></c:leadComponent>
+    <c:AccountList></c:AccountList>
+</aura:component>	

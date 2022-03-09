@@ -1,3 +1,3 @@
 <aura:application extends="force:slds">
-    <c:leadComponent></c:leadComponent>
+    <c:mainComponent></c:mainComponent>
 </aura:application>	
