@@ -3,7 +3,6 @@
 *	Description:- Data table that displays the current Accounts
 *	Date: 3/8/22
 */
-
 ({
     init : function(component, event, helper) {
         component.set('v.columns', [
@@ -14,12 +13,12 @@
         var action = component.get('c.getAccount');
         action.setCallback(this, function(response){
             var state = response.getState();
-            if(state == 'SUCCESS') {
+            if(state === 'SUCCESS') {
                 var responseValue = response.getReturnValue();
                 component.set('v.data', responseValue);
             }
         });
         $A.enqueueAction(action);
     }
-})
+});
 

@@ -8,6 +8,7 @@
     <aura:attribute name="data" type="Object"/>
     <aura:attribute name="columns" type="List"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:registerEvent name ="auraEvent"></aura:registerEvent>
 
     <div style="height: 300px">
         <lightning:datatable
