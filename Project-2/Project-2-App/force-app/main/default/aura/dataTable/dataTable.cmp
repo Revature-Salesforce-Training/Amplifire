@@ -5,7 +5,7 @@
 */ -->
 
 <aura:component controller="TableController" implements="flexipage:availableForAllPageTypes" access="global">
-    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="data" type="Account[]"/>
     <aura:attribute name="columns" type="List"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
     <aura:registerEvent name ="auraEvent"></aura:registerEvent>
@@ -13,8 +13,8 @@
     <div style="height: 300px">
         <lightning:datatable
                 keyField="id"
-                data="{! v.data }"
-                columns="{! v.columns }"
+                data="{! v.mydata }"
+                columns="{! v.mycolumns }"
                 hideCheckboxColumn="true"/>
     </div>
 </aura:component>	
